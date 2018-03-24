@@ -19,12 +19,24 @@ public class activateLever : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown("r"))
+        /*if (Input.GetKeyDown("f"))
         {
             anim.enabled = true;
             audioSrcs[0].PlayDelayed(0.2f);
             audioSrcs[1].PlayDelayed(2.0f);
-			//SceneManager.LoadScene("Scene_02");
+			SceneManager.LoadScene("Scene_02");
+        }*/
+	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player") //&& Input.GetKeyDown("f"))
+        {
+            anim.enabled = true;
+            audioSrcs[0].PlayDelayed(0.2f);
+            audioSrcs[1].PlayDelayed(2.0f);
+            //SceneManager.LoadScene("Scene_02");
+            Debug.Log("lol");
         }
-	}   
+    }
 }
