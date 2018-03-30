@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Path : MonoBehaviour {
+public class Path1 : MonoBehaviour {
 	public bool isDebug = true;
 	public float Radius = 2.0f;
 	public Vector3[] pointA;
