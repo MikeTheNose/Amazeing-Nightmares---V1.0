@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour {
-	[SerializeField] Path path;
+	[SerializeField] Path1 path1;
 	public float speed = 10.0f;
 	public float mass = 5.0f;
 	public bool isLooping = true;
@@ -16,7 +16,7 @@ public class EnemyPatrol : MonoBehaviour {
 	Vector3 velocity;
 	// Use this for initialization
 	void Start () {
-		pathLength = path.Length;
+		pathLength = path1.Length;
 		curPathIndex = 0;
 		velocity = transform.forward;
 	}
@@ -24,9 +24,9 @@ public class EnemyPatrol : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		curSpeed = speed * Time.deltaTime;
-		targetPoint = path.GetPoint (curPathIndex);
+		targetPoint = path1.GetPoint (curPathIndex);
 
-		if (Vector3.Distance (transform.position, targetPoint) < path.Radius) {
+		if (Vector3.Distance (transform.position, targetPoint) < path1.Radius) {
 			if (curPathIndex < (pathLength - 1))
 				curPathIndex++;
 			else if (isLooping)
